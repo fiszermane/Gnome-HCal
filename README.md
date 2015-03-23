@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # GnomeHCal
 Another Hebrew Calendar for Gnome forked from other Gnome Calendar extensions
 
