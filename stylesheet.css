@@ -1,0 +1,48 @@
+.calendar-holiday {
+
+    text-decoration: underline;
+
+}
+
+.text-holiday {
+    color: #f3f3f3;
+}
+
+.calendar-parsha {
+
+    font-size: 11px;
+    margin-right: 12px;
+    padding-top: 7px;
+    padding-right: 10px;
+/*    padding-bottom: 0px;
+    padding-left: 0px; */
+    
+}
+
+.calendar-regular {
+
+    font-size: 11px;
+    font-weight: bold;
+    border: 1px solid gray;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+
+}
+
+.calendar-heading {
+    
+    font-size: 9px;
+    color: #eeeeec;
+
+}
+
+.calendar-preferences-button {
+    padding: 2px;
+}
+
+.calendar-preferences-button:hover {
+    background-color: rgba(128, 128, 128, .1);
+}
+
