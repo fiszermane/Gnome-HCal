@@ -1,9 +1,0 @@
-{
-
-  "shell-version": ["3.10", "3.12", "3.14"],
-  "uuid": "fiszermane@anotherhcal.gno.me",
-  "name": "Gnome HCal",
-  "description": "Another Hebrew Calendar forked from Gnome HDate & Persian Date extensions. \nRequires libhdate-glib."
-  
-}
-
