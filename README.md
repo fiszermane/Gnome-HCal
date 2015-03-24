@@ -15,8 +15,8 @@ Another Hebrew Calendar for Gnome forked from other Gnome Calendar extensions
 
 # Inspiration
 Forked from other useful Gnome Calendar extensions:
-* Gnome Hdate (https://github.com/amiad/gnomehdate)
-* Persian Date (https://github.com/omid/PersianCalendarforGnomeShell).
+* Gnome Hdate (https://github.com/amiad/gnome-hdate)
+* Persian Date (https://github.com/omid/Persian-Calendar-for-Gnome-Shell).
  
 # Dependencies GnomeHCal
 * vala
