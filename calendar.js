@@ -267,6 +267,8 @@ Calendar.prototype = {
         let row = 2;
         let p_iter;
         let savep;
+        let _prsh = 0;
+        let prsh = 0;
         
         while (true) {
 
@@ -289,8 +291,14 @@ Calendar.prototype = {
             // 'dw3' is day of the week
             // 7=Shabbat
             let styleClass = 'calendar-day-base calendar-day calendar-regular';
-            if (dw3==7) styleClass += ' calendar-nonwork-day'
+            if (dw3==7) {
+                            styleClass += ' calendar-nonwork-day';
+                            prsh = 1;
+            }
             else styleClass += ' calendar-work-day'
+            
+            //if ((p_iter[2]+1) == daysinmonth) prsh = 1;
+            //if (((p_iter[2]+1) == daysinmonth) && (dw3 < 7)) prsh = 1;
             
             if (checkholidays[0] !== null) styleClass += ' calendar-holiday';
 
@@ -309,6 +317,19 @@ Calendar.prototype = {
             // Calculate position (7 - Day of the week).
             // If I'm in Shabbat, go down one row.
             let cols = 8 - dw3;
+            if (prsh == 1) {
+            
+                                let parasha = Hdatef.fechas.parsha(iter[0], iter[1], iter[2]);
+                                let textp;
+                                if (parasha) textp = parasha[0];
+                                else if (checkholidays) textp = checkholidays[0];
+                                let label8 = new St.Label({ text: textp });
+                                label8.style_class = "calendar-parsha";
+                                this.actor.add(label8, { row: row, col: 0 } );
+                                _prsh++;
+                                prsh = 0;
+            }
+            
             this.actor.add(button, { row: row, col: cols } );
             if (cols == 1) row++;
             
@@ -319,15 +340,24 @@ Calendar.prototype = {
             
         }
         
-        /* // Get && Print Parasha
-        let parasha = Hdatef.fechas.parsha(iter[0], iter[1], iter[2]);
-        let textp;
-        if (parasha) textp = parasha[0];
-        else if (checkholidays) textp = checkholidays[0];
-        let label8 = new St.Label({ text: textp });
-        label8.style_class = "calendar-parsha";
-        this.actor.add(label8, { row: row, col: 0 } ); */
-         
+        // Print last one -- none of this would be necessary if the calendar
+        // engine I have would be great, but I don't have the skills to
+        // to pull it off without great effort (im not a developer), so this is the workaround.
+        /*
+        if ((_prsh == 4)) { // || (_prsh == 5)) {
+        
+                         parasha = Hdatef.fechas.parsha(iter[0], iter[1], iter[2]);
+                         if (parasha) textp = parasha[0];
+                         else if (checkholidays) textp = checkholidays[0];
+                         label8 = new St.Label({ text: textp });
+                         label8.style_class = "calendar-parsha";
+                         if ((_prsh == 5) && (dw3 !== 7)) {
+                                this.actor.add(label8, { row: 7, col: 0 } );
+                                ++row;
+                         }
+                         this.actor.add(label8, { row: 6, col: 0 } );
+                        _prsh = 0;
+        } */
 
         // Show box with Gregorian Date
         let g_selectedDate = Hdatef.fechas.hdatetogreg ( this._selectedDate[0], this._selectedDate[1], this._selectedDate[2] );
@@ -349,4 +379,3 @@ Calendar.prototype = {
     }
 
 }
-
