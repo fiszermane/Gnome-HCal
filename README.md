@@ -3,7 +3,7 @@ Another Hebrew Calendar for Gnome forked from other Gnome Calendar extensions
 
 # Features
 
-![HCal](https://github.com/fiszermane/Gnome-HCal/blob/master/screenshot1.png)
+![ubuntugnome](https://cloud.githubusercontent.com/assets/11448916/7904533/814d729a-0808-11e5-9c8a-79989685a5d4.png)
 
 
 * Based on Hebrew Date, no Gregorian Date. Just the reference.
