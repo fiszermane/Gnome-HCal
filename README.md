@@ -9,7 +9,7 @@ Another Hebrew Calendar for Gnome forked from other Gnome Calendar extensions
 * Based on Hebrew Date, no Gregorian Date. Just the reference.
 * Easy functions as a source to find Chagim
 * Some features need to be further developed.
-* TODO: No parshaiot yet, had trouble with CSS and rendering.
+* TODO: Parshaiot there, buggy, but there with latest calendar.js; Need to update the image right above.
 
 # Install through Gnome Extensions web.
 
